@@ -1,72 +1,67 @@
-/* General styles */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+/**{
+    border:1px solid black;
 }
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #fff; /* Background color */
-}
-
-/* Header styles */
-header {
+*/
+header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    background-color: #f4f4f4;
 }
 
-#logo {
-    width: 50px;
-    height: 50px;
+#logo{
+  width: 50px;
+  height: 50px;  
 }
-
-h1 {
-    font-size: 1.5em;
+h1{
+    font-size: 15px;
 }
-
-/* Article styles */
-article {
+article{
     width: 30%;
-    padding: 20px;
-    margin-bottom: 20px;
 }
-
-article img {
+article img{
     width: 100%;
-    height: auto;
+   
 }
-
-/* Sección de Fotos */
-#seccionFotos {
+#seccionFotos{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    gap: 10px;
-    margin: 20px 0;
 }
-
-.contenedorImg {
+.contenedorImg{
     height: 290px;
-    width: 100%;
     overflow: hidden;
 }
 
-/* Media Queries */
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
 
-/* Cuando la pantalla tiene un ancho máximo de 768px (tabletas y dispositivos pequeños) */
+header {
+    padding: 10px;
+    background-color: #f8f8f8;
+}
+
+main {
+    padding: 20px;
+}
+
+.info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Media queries para pantallas pequeñas */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
-        text-align: center;
+
     }
 
-    h1 {
-        font-size: 1.2em;
-    }
+    #logo { width: 100px; height: 100px; margin-bottom: 10px; /* Añade un margen inferior para separar el logo del h1 */ } h1 { font-size: 20px; text-align: center; /* Centra el texto del h1 */ }
 
     article {
         width: 100%;
@@ -74,47 +69,22 @@ article img {
     }
 
     #seccionFotos {
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
     }
 
     .contenedorImg {
-        height: 200px; /* Ajusta la altura de las imágenes en pantallas más pequeñas */
+        height: auto;
     }
 }
 
-/* Cuando la pantalla tiene un ancho máximo de 480px (teléfonos móviles) */
-@media (max-width: 480px) {
-    header {
-        flex-direction: column;
-        padding: 10px;
-    }
-
-    h1 {
-        font-size: 1em;
-    }
-
+/* Media queries para pantallas medianas */
+@media (min-width: 769px) and (max-width: 1024px) {
     article {
-        width: 100%;
+        width: 45%;
     }
 
     #seccionFotos {
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .contenedorImg {
-        height: 150px; /* Ajusta la altura de las imágenes aún más */
-    }
-}
-
-/* Flexbox optimizado para las imágenes en la sección de fotos */
-#seccionFotos .contenedorImg {
-    width: calc(33.33% - 10px); /* Asegura que haya 3 imágenes por fila en pantallas grandes */
-}
-
-/* Cuando la pantalla tiene un ancho máximo de 1024px */
-@media (max-width: 1024px) {
-    #seccionFotos .contenedorImg {
-        height: 120px; /* Ajuste de la altura de las imágenes en pantallas más pequeñas */
+        justify-content: space-between;
     }
 }
